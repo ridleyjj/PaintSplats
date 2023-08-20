@@ -21,8 +21,8 @@ class Splat {
     show() {
         let vel = p5.Vector.random2D();
         let d = dist(mouseX, mouseY, this.pos.x, this.pos.y);
-        d = map(d, 100, 0, 1, 3);
-        d = constrain(d, 1, 3);
+        d = map(d, 300, 0, 0, 2);
+        d = constrain(d, 0, 2);
         vel.x *= d;
         vel.y *= d;
         this.pos.add(vel);
