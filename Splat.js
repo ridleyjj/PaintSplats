@@ -19,7 +19,13 @@ class Splat {
     }
 
     show() {
-        this.pos.add(p5.Vector.random2D());
+        let vel = p5.Vector.random2D();
+        let d = dist(mouseX, mouseY, this.pos.x, this.pos.y);
+        d = map(d, 100, 0, 1, 3);
+        d = constrain(d, 1, 3);
+        vel.x *= d;
+        vel.y *= d;
+        this.pos.add(vel);
         ellipse(this.pos.x, this.pos.y, this.r, this.r);
     }
 
